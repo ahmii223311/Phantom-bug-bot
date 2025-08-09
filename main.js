@@ -22,6 +22,10 @@ const readline = require("readline")
 const { parsePhoneNumber } = require("libphonenumber-js")
 const makeWASocket = require("@whiskeysockets/baileys").default
 
+const { default: makeWASocket, useSingleFileAuthState, makeInMemoryStore } = require('@adiwajshing/baileys');
+const pino = require('pino');
+
+// ✅ YAHAN YE LINE LAGAO
 const store = makeInMemoryStore({
     logger: pino().child({
         level: 'silent',
@@ -293,3 +297,4 @@ if (e.includes("Timed Out")) return
 if (e.includes("Value not found")) return
 console.log('Caught exception: ', err)
 })
+
